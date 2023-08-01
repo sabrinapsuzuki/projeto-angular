@@ -1,0 +1,12 @@
+<p>Listagem de produtos</p>
+
+<div *ngIf="(products$ | async ) as products">
+  <div *ngFor="let product of products">
+    <img
+      [src]="product.image"
+      alt=""
+    />
+    <p>{{product.title}}</p>
+    <p>Preço:</p>
+  </div>
+</div>

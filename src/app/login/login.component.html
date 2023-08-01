@@ -1,0 +1,13 @@
+  <div>
+    <p>Tela de Login</p>
+  
+    <form (submit)="login($event)" class="form-login" [formGroup]="loginForm">
+      <input type="text" placeholder="Digite seu username" formControlName="username" required>
+      <div class="spacer"></div>
+  
+      <input type="password" placeholder="Digite sua senha" formControlName="password" required>
+      <div class="spacer"></div>
+  
+      <button type="submit" [disabled]="loginForm.invalid">Entrar</button>
+    </form>
+  </div>
