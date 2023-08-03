@@ -1,13 +1,32 @@
-  <div>
-    <p>Tela de Login</p>
-  
+<div class="container">
+  <div class="box-login">
+    <div class="spacer-25"></div>
+
+    <p class="title">Faça seu login</p>
+
     <form (submit)="login($event)" class="form-login" [formGroup]="loginForm">
-      <input type="text" placeholder="Digite seu username" formControlName="username" required>
-      <div class="spacer"></div>
-  
-      <input type="password" placeholder="Digite sua senha" formControlName="password" required>
-      <div class="spacer"></div>
-  
+      <input
+        type="text"
+        placeholder="Digite seu username"
+        formControlName="username"
+        required
+      />
+      <div class="spacer-10"></div>
+
+      <input
+        type="password"
+        placeholder="Digite sua senha"
+        formControlName="password"
+        required
+      />
+      <div class="spacer-10"></div>
+
+      <span class="error" *ngIf="loginError">{{ loginError }}</span>
+
+      <div class="spacer-10"></div>
       <button type="submit" [disabled]="loginForm.invalid">Entrar</button>
+
+      <div class="loading" *ngIf="loading">Carregando...</div>
     </form>
   </div>
+</div>
